@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Customer Churn Predictor</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+  </head>
+
+  <body>
+    <section class="hero is-primary is-bold is-fullheight">
+      <div class="hero-head has-text-centered">
+        <header>
+          <h1 class="title">Customer Churn Predictor</h1>
+        </header>
+      </div>
+    
+      <div class="hero-body">
+        <div class="container has-text-centered box-shape">
+          <form action="/results" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="has-text-dark has-text-weight-bold">
+              Customer Details
+            </div>
+            <hr class="separator">
+
+            <div class="flex-row space-around">
+              <div class="field">
+                <label class="label">Tenure Duration</label>
+                <div class="control">
+                  <input name="tenure" class="input" type="number" placeholder="Number in months" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Online Security</label>
+                <div class="select">
+                  <select name="security">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Technical Support</label>
+                <div class="select">
+                  <select name="support">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-row space-around">
+              <div class="field">
+                <label class="label">Contract</label>
+                <div class="select">
+                  <select name="contract">
+                    <option value="month-to-month">Month-to-month</option>
+                    <option vaue="one-year">One Year</option>
+                    <option value="two-year">Two Year</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Dependents</label>
+                <div class="select">
+                  <select name="dependents">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Phone Service</label>
+                <div class="select">
+                  <select name="phone">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-row space-around">
+              <div class="field">
+                <label class="label">Internet Service</label>
+                <div class="select">
+                  <select name="internet">
+                    <option value="No">No</option>
+                    <option value="dsl">DSL</option>
+                    <option value="fiber-optic">Fiber Optic</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Payment Method</label>
+                <div class="select">
+                  <select name="payment">
+                    <option value="credit-card">Credit card</option>
+                    <option value="bank-transfer">Bank transfer</option>
+                    <option value="electronic-check">Electronic check</option>
+                    <option value="mailed-check">Mailed check</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Online Backup</label>
+                <div class="select">
+                  <select name="backup">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-row space-around">
+              <div class="field">
+                <label class="label">Monthly Charges</label>
+                <div class="control">
+                  <input name="charges" class="input" type="number" placeholder="Enter amount in numbers" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Device Protection</label>
+                <div class="select">
+                  <select name="protection">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Paperless Billing</label>
+                <div class="select">
+                  <select name="paperless">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <hr class="separator">
+            <div class="flex-row justify-center">
+              <div class="field">
+                <div class="control">
+                  <button type="submit" class="button is-link">Submit</button>
+                </div>
+              </div>
+            </div> 
+          </form>
+        </div>
+      </div>
+    
+      <div class="hero-foot is-size-7 has-text-centered">
+        <div class="flex-row justify-center align-center">
+          <span class="has-text-light">Powered by  &nbsp;</span>
+          <img width="25" height="25" src="imgs/watson-logo.png" alt="Watson Logo">
+        </div>
+        <span class="has-text-light">All Rights Reserved &copy;</span>
+      </div>
+    </section>
+  </body>
+</html>
