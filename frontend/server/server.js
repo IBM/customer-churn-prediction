@@ -1,7 +1,19 @@
+<<<<<<< HEAD
 require('dotenv').config();
 require('appmetrics-dash').attach();
 require('appmetrics-prometheus').attach();
 
+=======
+// Uncomment following to enable zipkin tracing, tailor to fit your network configuration:
+// var appzip = require('appmetrics-zipkin')({
+//     host: 'localhost',
+//     port: 9411,
+//     serviceName:'frontend'
+// });
+
+require('appmetrics-dash').attach();
+require('appmetrics-prometheus').attach();
+>>>>>>> Adding frontend code
 const appName = require('./../package').name;
 const http = require('http');
 const express = require('express');
@@ -11,19 +23,30 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const ejs = require('ejs');
+<<<<<<< HEAD
 //const env = require('ibm-cloud-env');
 const cfenv   = require('cfenv');
 const appEnv = cfenv.getAppEnv();
+=======
+const pretty = require('express-prettify');
+
+>>>>>>> Adding frontend code
 const logger = log4js.getLogger(appName);
 const app = express();
 const server = http.createServer(app);
 
+<<<<<<< HEAD
 const name = process.env.WML_INSTANCE_NAME;
 const username = process.env.USERNAME || cfenv.getAppEnv().getService(name).credentials.username;
 //env['pm-20'][0].credentials.username;
 const password = process.env.PASSWORD || cfenv.getAppEnv().getService(name).credentials.password;
 
 const auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
+=======
+const env = JSON.parse(process.env.VCAP_SERVICES);
+const credentials = env['pm-20'][0].credentials;
+const auth = 'Basic ' + new Buffer(credentials.username + ':' + credentials.password).toString('base64');
+>>>>>>> Adding frontend code
 
 var token = 'Bearer ';
 
@@ -78,7 +101,11 @@ app.post('/results', function(req, res) {
   const protection = req.body.protection;
   const paperless = req.body.paperless;
 
+<<<<<<< HEAD
   fetch(process.env.MODEL_URL, {
+=======
+  fetch('https://ibm-watson-ml.mybluemix.net/v3/wml_instances/461ebac2-ce8e-44e6-b3b9-b6f42a5f31b6/deployments/46608e13-988e-4e1b-969c-fe7bf8cf12c4/online', {
+>>>>>>> Adding frontend code
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

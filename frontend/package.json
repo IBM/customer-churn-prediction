@@ -24,7 +24,10 @@
     "body-parser": "^1.18.3",
     "bulma": "^0.7.1",
     "cfenv": "^1.1.0",
+<<<<<<< HEAD
     "dotenv": "^6.0.0",
+=======
+>>>>>>> Adding frontend code
     "ejs": "^2.6.1",
     "express": "^4.15.3",
     "express-prettify": "^0.1.0",
