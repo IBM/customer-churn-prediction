@@ -33,7 +33,6 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 <!--Update this section-->
 ## Featured technologies
-Select components from [here](https://github.ibm.com/developer-journeys/journey-docs/tree/master/_content/dev#technologies), copy and paste the raw text for ease
 * [Jupyter Notebooks](http://jupyter.org/): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text.
 * [Pandas](https://pandas.pydata.org/):  An open source library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 * [Seaborn](https://seaborn.pydata.org/): A Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
@@ -169,7 +168,7 @@ Go to [https://customer-churn-webapp.mybluemix.net/](https://customer-churn-weba
 <!--Include any relevant links-->
 
 # Links
-* [Demo on Youtube](https://youtu.be/13Y_AI1s9k8)
+* [Demo video on Youtube](https://youtu.be/13Y_AI1s9k8)
 
 <!-- pick the relevant ones from below -->
 # Learn more
