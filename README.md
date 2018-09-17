@@ -40,7 +40,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 # Watch the Video
 
-[![](https://i9.ytimg.com/vi/13Y_AI1s9k8/mq1.jpg?sqp=CJy299wF&rs=AOn4CLDR5Sv6YOAUkqxAWUaylJHw_cRWcA)](https://youtu.be/13Y_AI1s9k8)
+[![](https://i.ytimg.com/vi/13Y_AI1s9k8/0.jpg)](https://youtu.be/13Y_AI1s9k8)
 
 # Steps
 
@@ -101,9 +101,8 @@ Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a 
 
 To make the dataset available in the notebook, we need to refer to where it lives. Watson Studio automatically generates a connection to your Cloud Object Storage instance and gives access to your data.
 
-* Click in the cell below `2. Loading Our Dataset` Make sure your cursor is above the line: `customer_data = pd.read_csv(body)`
+* Click in the cell below `2. Loading Our Dataset`
 * Then go to the Files section to the right of the notebook and click `Insert to code` for the data you have uploaded. Choose `Insert pandas DataFrame`.
-Make sure that the last line is: `customer_data = pd.read_csv(body)`
 
 ### 6. Follow the steps in the notebook
 
