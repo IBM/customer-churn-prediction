@@ -1,9 +1,7 @@
-<!--Put badges at the very top -->
-<!--change the repo -->
-[![Build Status](https://travis-ci.org/IBM/watson-banking-chatbot.svg?branch=master)](https://travis-ci.org/IBM/watson-banking-chatbot)
-<!--Add a new Title and fill in the blanks -->
+# Work In Progress. Please re-visit soon for the completed code pattern
+
 # Build a Customer Churn Predictor using Watson Studio and Jupyter Notebooks
-In this Code Pattern, we use IBM Watson Studio to go through the whole data science pipeline to solve a business problem and predict customer churn using Telco customer churn dataset. Watson Studio is an interactive, collaborative, cloud-based environment where data scientists, developers, and others interested in data science can use tools (e.g., RStudio, Jupyter Notebooks, Spark, etc.) to collaborate, share, and gather insight from their data as well as build and deploy machine learning and deep learning models.
+In this Code Pattern, we use IBM Watson Studio to go through the whole data science pipeline to solve a business problem and predict customer churn using a Telco customer churn dataset. Watson Studio is an interactive, collaborative, cloud-based environment where data scientists, developers, and others interested in data science can use tools (e.g., RStudio, Jupyter Notebooks, Spark, etc.) to collaborate, share, and gather insight from their data as well as build and deploy machine learning and deep learning models.
 
 When the reader has completed this Code Pattern, they will understand how to:
 
@@ -14,11 +12,10 @@ When the reader has completed this Code Pattern, they will understand how to:
 * Deploy a selected machine learning model to production using Watson Studio
 * Create a front-end application to interface with the client and start consuming your deployed model.
 
-<!--Remember to dump an image in this path-->
 ![](doc/source/images/architecture.png)
 
 ## Flow
-<!--Add new flow steps based on the architecture diagram-->
+
 1. Understand the business problem.
 2. Load the provided notebook into the Watson Studio platform.
 3. [Telco customer churn data set](https://community.watsonanalytics.com/wp-content/uploads/2015/03/WA_Fn-UseC_-Telco-Customer-Churn.csv) is loaded into the Jupyter Notebook.
@@ -27,12 +24,12 @@ When the reader has completed this Code Pattern, they will understand how to:
 6. Deploy a selected machine learning model into production.
 7. Interact and consume your model using a frontend application.
 
-<!--Update this section-->
 ## Included components
+
 * [IBM Watson Studio](https://www.ibm.com/us-en/marketplace/data-science-experience): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
 
-<!--Update this section-->
 ## Featured technologies
+
 * [Jupyter Notebooks](http://jupyter.org/): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text.
 * [Pandas](https://pandas.pydata.org/):  An open source library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 * [Seaborn](https://seaborn.pydata.org/): A Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
@@ -41,12 +38,13 @@ When the reader has completed this Code Pattern, they will understand how to:
 * [NodeJS](https://nodejs.org/): A JavaScript runtime built on Chrome's V8 JavaScript engine, used for building full stack Javascript web applications.
 * [ExpressJS](https://expressjs.com/): A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
-<!--Update this section when the video is created-->
 # Watch the Video
+
 [![](https://i9.ytimg.com/vi/13Y_AI1s9k8/mq1.jpg?sqp=CJy299wF&rs=AOn4CLDR5Sv6YOAUkqxAWUaylJHw_cRWcA)](https://youtu.be/13Y_AI1s9k8)
 
 # Steps
-1. [Sign up for the Watson Studio](#1-sign-up-for-the-watson-studio)
+
+1. [Sign up for Watson Studio](#1-sign-up-for-watson-studio)
 2. [Create a new Project](#2-create-a-new-project)
 3. [Upload the dataset](#3-upload-the-dataset)
 4. [Import notebook to Watson Studio](#4-import-notebook-to-watson-studio)
@@ -56,7 +54,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 8. [Deploy your model to the cloud](#8-deploy-your-model-to-the-cloud)
 9. [Try out the model by using the frontend application](#9-try-out-the-model-by-using-the-frontend-application)
 
-### 1. Sign up for the Watson Studio
+### 1. Sign up for Watson Studio
 
 Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a project in Watson Studio a free tier Object Storage service will be created in your IBM Cloud account. Take note of your service names as you will need to select them in the following steps.
 
@@ -80,7 +78,6 @@ Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a 
 
 * Download the dataset we will use in this pattern from the following link: [https://community.watsonanalytics.com/wp-content/uploads/2015/03/WA_Fn-UseC_-Telco-Customer-Churn.csv](https://community.watsonanalytics.com/wp-content/uploads/2015/03/WA_Fn-UseC_-Telco-Customer-Churn.csv)
 
-> Note: If you want a smooth flow when executing the code in the notebook, rename the downloaded dataset file to `telco-customer-churn.csv`.
 
 * Drag and drop the dataset (csv) file you just downloaded to Watson Studio's dashboard to upload it to Cloud Object Storage.
 
@@ -104,22 +101,9 @@ Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a 
 
 To make the dataset available in the notebook, we need to refer to where it lives. Watson Studio automatically generates a connection to your Cloud Object Storage instance and gives access to your data.
 
-* Click the data icon in the toolbar, and in the right sidebar, you should find the previously uploaded dataset. Click on **Insert to code**, you will see 2 options, first option **Insert Pandas Dataframe** will autogenerate the code you need to grab that specific dataset from where it lives on Cloud Object Storage. The second option, **Insert Credentials** is only to paste in your Cloud Object Storage instance credentials.
-
-* In our case, if you're following along with the steps in the notebook, you should have a cell with the code needed to give you access to your instance of Cloud Object Storage and load the dataset into a Pandas Dataframe. You just need to replace the asterisks in the following block of code found in the notebook with your credentials (you can find those by clicking on Insert Credentials):
-
-```
-client_7d95c0119ed245c6a85d81669c23d27f = ibm_boto3.client(service_name='s3',
-    ibm_api_key_id='********',
-    ibm_auth_endpoint="*********",
-    config=Config(signature_version='oauth'),
-    endpoint_url='*********')
-
-body = client_7d95c0119ed245c6a85d81669c23d27f.get_object(Bucket='**********',Key='telco-customer-churn.csv')['Body']
-
-```
-
-![](doc/source/images/008.jpg)
+* Click in the cell below `2. Loading Our Dataset` Make sure your cursor is above the line: `customer_data = pd.read_csv(body)`
+* Then go to the Files section to the right of the notebook and click `Insert to code` for the data you have uploaded. Choose `Insert pandas DataFrame`.
+Make sure that the last line is: `customer_data = pd.read_csv(body)`
 
 ### 6. Follow the steps in the notebook
 
@@ -157,30 +141,18 @@ Follow the steps in the notebook to deploy your model on the cloud.
 
 Go to [https://customer-churn-webapp.mybluemix.net/](https://customer-churn-webapp.mybluemix.net/) to try out the model. You can find the details of the frontend application in the `frontend` folder of this repo.
 
-<!--Add a section that explains to the reader what typical output looks like, include screenshots -->
-
 # Sample output
 ![](doc/source/images/sample_output.png)
-
-<!--Include any troubleshooting tips (driver issues, etc)-->
-
-
-<!--Include any relevant links-->
 
 # Links
 * [Demo video on Youtube](https://youtu.be/13Y_AI1s9k8)
 
-<!-- pick the relevant ones from below -->
 # Learn more
 * **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/code/technologies/artificial-intelligence/).
 * **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/code/technologies/data-science/)
 * **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
 * **With Watson**: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? [Join the With Watson program](https://www.ibm.com/watson/with-watson/) to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
 * **IBM Watson Studio**: Master the art of data science with IBM's [Watson Studio](https://datascience.ibm.com/)
-* **PowerAI**: Get started or get scaling, faster, with a software distribution for machine learning running on the Enterprise Platform for AI: [IBM Power Systems](https://www.ibm.com/ms-en/marketplace/deep-learning-platform)
-* **Spark on IBM Cloud**: Need a Spark cluster? Create up to 30 Spark executors on IBM Cloud with our [Spark service](https://console.bluemix.net/catalog/services/apache-spark)
-
-<!--keep this-->
 
 # License
 [Apache 2.0](LICENSE)
