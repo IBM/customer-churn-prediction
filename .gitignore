@@ -1,4 +1,7 @@
 .ipynb_checkpoints/
 frontend/node_modules/
+frontend/node_modules_linux/
+frontend/README.md
 .vscode/
 *.log
+.env

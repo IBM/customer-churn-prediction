@@ -11,10 +11,14 @@ RUN apt-get update \
 
 # Install npm production packages 
 <<<<<<< HEAD
+<<<<<<< HEAD
 COPY frontend/package.json /app/
 =======
 COPY package.json /app/
 >>>>>>> Adding frontend code
+=======
+COPY frontend/package.json /app/
+>>>>>>> Modifying Dockerfile
 RUN cd /app; npm install --production
 
 COPY . /app
