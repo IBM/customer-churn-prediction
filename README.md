@@ -136,9 +136,40 @@ Follow the steps in the notebook to deploy your model on the cloud.
 
 > Note: the url generated as an endpoint for scoring using your model will be different than the one in this notebook, please use your generated url to test your own model.
 
-### 9. Try out the model by using the frontend application.
+### 9. Build the frontend application.
 
-Go to [https://customer-churn-webapp.mybluemix.net/](https://customer-churn-webapp.mybluemix.net/) to try out the model. You can find the details of the frontend application in the `frontend` folder of this repo.
+> Go to [https://customer-churn-webapp.mybluemix.net/](https://customer-churn-webapp.mybluemix.net/) to try out the model through a user interface.
+
+For developing the UI locally and testing it:
+
+* Clone this repo and navigate to the `frontend/` folder.
+
+* Use your favorite IDE and have ready a terminal or command prompt ready and cd into the `frontend/` folder.
+
+* Install the required node modules by typing `npm install`.
+
+* Create a `.env` file to hold your credentials:
+
+This application communicates with services on IBM Cloud and requires authentication using your own credentials to each of those different services. If the application is deployed to IBM Cloud, these credentials will be stored in a variable called `VCAP_SERVICES` inside `process.env` and will be grabbed by default through the code written in the `server/server.js` file in our app. However, to develop and test locally, you need the same credentials stored in an environment mimicking the cloud environment. For this we use a node module called `dotenv`, and its function is to grab secrets that you stored in a `.env` file and parse it into `process.env` and make it avilable for your application. The secrets are stored as plain text. For our purposes here, our `.env` file will look like the following:
+
+```
+
+```
+
+For deploying the UI app, you can follow one of two methods:
+
+#### 1. Using Docker:
+If you already have Docker and the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use) installed on your system, it is easy to build and deploy the application using the settings in the Dockerfile accompanied within this repo.
+
+* After cloning this repo, use the terminal (unix) or a command prompt (windows) to navigate to the `frontend/` folder in this repo.
+
+* Type the following command:
+
+```
+ibmcloud dev build
+```
+
+If you want to 
 
 # Sample output
 ![](doc/source/images/sample_output.png)
