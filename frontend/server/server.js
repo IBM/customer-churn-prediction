@@ -1,6 +1,3 @@
-require('appmetrics-dash').attach();
-require('appmetrics-prometheus').attach();
-
 require('dotenv').config();
 require('appmetrics-dash').attach();
 require('appmetrics-prometheus').attach();
@@ -14,9 +11,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const ejs = require('ejs');
+//const env = require('ibm-cloud-env');
 const cfenv   = require('cfenv');
 const appEnv = cfenv.getAppEnv();
-
 const logger = log4js.getLogger(appName);
 const app = express();
 const server = http.createServer(app);

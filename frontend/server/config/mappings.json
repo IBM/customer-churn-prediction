@@ -1,0 +1,7 @@
+{
+  "wml-credentials": {
+    "searchPatterns": [
+        "env:WML_INSTANCE_NAME"
+    ]
+  }
+}
