@@ -9,8 +9,8 @@ RUN apt-get update \
  && apt-get clean \
  && echo 'Finished installing dependencies'
 
-# Install npm production packages
-COPY frontend/package.json /app/
+# Install npm production packages 
+COPY package.json /app/
 RUN cd /app; npm install --production
 
 COPY . /app

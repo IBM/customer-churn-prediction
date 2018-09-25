@@ -16,9 +16,16 @@ Basic Web project with ExpressJS on NodeJS
 ### Summary
 The Web basic starter contains an opinionated set of files for web serving:
 
+<<<<<<< HEAD
 - `public/index.html`
 - `public/404.html`
 - `public/500.html`
+=======
+- `index.html`
+- `results.html`
+- `404.html`
+- `500.html`
+>>>>>>> upstream/uiBranch
 
 
 
@@ -56,7 +63,10 @@ Service credentials are taken from the VCAP_SERVICES environment variable if run
 
 
 <a name="run"></a>
+<<<<<<< HEAD
 ### Run
+=======
+>>>>>>> upstream/uiBranch
 #### Using IBM Cloud development CLI
 The IBM Cloud development plugin makes it easy to compile and run your application if you do not have all of the tools installed on your computer yet. Your application will be compiled with Docker containers. To compile and run your app, run:
 
@@ -67,7 +77,29 @@ bx dev run
 
 
 #### Using your local development environment
+<<<<<<< HEAD
 
+=======
+> Note: The application may not run locally as it is programmed to communicate with IBM Cloud environment and grab credentials from that environment, if you want to try out the UI with the server callbacks, comment out the following block of code in `server/server.js`:
+
+```
+const env = JSON.parse(process.env.VCAP_SERVICES);
+const credentials = env['pm-20'][0].credentials;
+const auth = 'Basic ' + new Buffer(credentials.username + ':' + credentials.password).toString('base64');
+
+var token = 'Bearer ';
+
+fetch('https://ibm-watson-ml.mybluemix.net/v3/identity/token', {
+  credentials: 'include',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': auth
+  }
+})
+.then(response => response.json())
+.then(json => token += json.token);
+```
+>>>>>>> upstream/uiBranch
 
 
 ##### Endpoints
@@ -75,6 +107,10 @@ bx dev run
 Your application is running at: `http://localhost:3000/` in your browser.
 
 - Health endpoint: `/appmetrics-dash`
+<<<<<<< HEAD
+=======
+- ML Model Results (only available/working when deployed to the cloud): `/results` 
+>>>>>>> upstream/uiBranch
 
 
 ##### Session Store
