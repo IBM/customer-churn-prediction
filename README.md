@@ -27,6 +27,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 ## Included components
 
 * [IBM Watson Studio](https://www.ibm.com/us-en/marketplace/data-science-experience): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
+* [IBM Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/overview): Deploy and run your applications without managing servers or clusters. Cloud Foundry automatically transforms source code into containers, scales them on demand, and manages user access and capacity.
 
 ## Featured technologies
 
@@ -281,7 +282,6 @@ After we deployed our app to the cloud, now it has no clue about our running ins
 
 # Links
 * [Demo video on Youtube](https://youtu.be/13Y_AI1s9k8)
-
 * [Read more about CRISPDM](https://www.ibm.com/support/knowledgecenter/en/SS3RA7_15.0.0/com.ibm.spss.crispdm.help/crisp_overview.htm)
 
 # Learn more
