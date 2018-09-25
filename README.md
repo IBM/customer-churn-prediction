@@ -144,19 +144,33 @@ For developing the UI locally and testing it:
 
 * Clone this repo and navigate to the `frontend/` folder.
 
-* Use your favorite IDE and have ready a terminal or command prompt ready and cd into the `frontend/` folder.
+* Use your favorite IDE and have a terminal or command prompt ready and cd into the `frontend/` folder.
 
 * Install the required node modules by typing `npm install`.
 
-* Create a `.env` file to hold your credentials:
+* Create a `.env` file in frontend folder (frontend/.env) to hold your credentials.
 
-This application communicates with services on IBM Cloud and requires authentication using your own credentials to each of those different services. If the application is deployed to IBM Cloud, these credentials will be stored in a variable called `VCAP_SERVICES` inside `process.env` and will be grabbed by default through the code written in the `server/server.js` file in our app. However, to develop and test locally, you need the same credentials stored in an environment mimicking the cloud environment. For this we use a node module called `dotenv`, and its function is to grab secrets that you stored in a `.env` file and parse it into `process.env` and make it avilable for your application. The secrets are stored as plain text. For our purposes here, our `.env` file will look like the following:
+> This application communicates with services on IBM Cloud and requires authentication using your own credentials to each of those different services. If the application is deployed to IBM Cloud, these credentials will be stored in a variable called `VCAP_SERVICES` inside `process.env` and will be grabbed by default through the code written in the `server/server.js` file in our app. However, to develop and test locally, you need the same credentials stored in an environment mimicking the cloud environment. For this we use a node module called `dotenv`, and its function is to grab secrets that you stored in a `.env` file and parse it into `process.env` and make it avilable for your application. The secrets are stored as plain text.
+
+For our purposes here, our `.env` file will look like the following:
+
+```
+WML_INSTANCE_NAME=**Enter with your Watson Machine Learning service instance name** 
+USERNAME=**Enter your WML username found in credentials**
+PASSWORD=**Enter your WML password found in credentials**
+INSTANCE_ID=**Enter your WML instance_id found in credentials**
+URL=**Enter your WML url found in credentials**
+PORT=3000
+MODEL_URL=**Change with your model url after deploying it to the cloud as in step 8**
 
 ```
 
-```
+> You can find screenshots of how to get these credentials in step 7 in this documentation.
 
-For deploying the UI app, you can follow one of two methods:
+* Run the application. You can do that by typing in your terminal `npm start` to start the local development server, or by typing `npm run dev` to run an interactive server that watches any changes you make to the application, specifically `server.js` while developing locally.
+You can view the application in any browser by navigating to: `http://localhost:3000`. Feel free to test it out.
+
+If you're happy with the application and want to deploy it to the cloud, you can follow one of three methods:
 
 #### 1. Using Docker:
 If you already have Docker and the [IBM Cloud CLI](https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use) installed on your system, it is easy to build and deploy the application using the settings in the Dockerfile accompanied within this repo.
@@ -169,10 +183,101 @@ If you already have Docker and the [IBM Cloud CLI](https://console.bluemix.net/d
 ibmcloud dev build
 ```
 
-If you want to 
+After this step finishes successfully with no errors, type in the following:
+
+```
+ibmcloud dev deploy
+```
+
+At the end of this step you should get a message in your terminal notifying you that the deployment was successful and giving you the url to visit the app online.
+
+![](doc/source/images/013.jpg)
+
+#### 2. Using IBM Cloud CLI:
+In your terminal, and inside the `frontend/` folder, type in the following:
+
+```
+ibmcloud app push
+```
+
+This will use the settings in `frontend/manifest.yml` to define different application settings, like how much memory it uses, the host and domain names, etc.
+
+At the end of this step you should get a message in your terminal notifying you that the deployment was successful and giving you the url to visit the app online as well as the health status of your app.
+
+![](doc/source/images/014.jpg)
+
+#### 3. Using IBM Cloud Toolchain:
+You can deploy your application by using automated, preconfigured devops process, that grabs code from your repo (you need a github repo), the process is triggered upon a push, then the toolchain starts the staging and building process. You can add other stages too, like testing, etc.
+
+You can start a toolchain and configure it here:
+[https://console.ng.bluemix.net/devops/setup/deploy/](https://console.ng.bluemix.net/devops/setup/deploy/)
+
+> Know more about IBM Cloud DevOps here: [https://www.ibm.com/cloud-computing/bluemix/devops](https://www.ibm.com/cloud-computing/bluemix/devops)
+
+Or you can click on the following button to clone the repo for this frontend app and create a toolchain to start deploying the app from there.
+
+[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://git.ng.bluemix.net/Heba.Elshimy1/CustomerChurnWebapp.git)
+
+Clicking on the previous button will direct you to the following page:
+
+![](doc/source/images/015.jpg)
+
+You will then be asked to authorize IBM Cloud to connect to your GitHub account, follow the steps to grant access.
+
+![](doc/source/images/016.jpg)
+
+![](doc/source/images/017.jpg)
+
+Now you will be asked to type in an API key. You can go ahead and let the tool create one for you.
+
+![](doc/source/images/018.jpg)
+
+![](doc/source/images/019.jpg)
+
+Below is the final step before building and deploying the app. Feel free to change the settings here, but make sure that you're pointing to the correct repo. The one populated by default from the above button will deploy the app used in this pattern. If you want to deploy a similar app you built and pushed to your repo, change the settings accordingly.
+
+![](doc/source/images/020.jpg)
+
+#### Connecting the UI with Watson Machine Learning
+After we deployed our app to the cloud, now it has no clue about our running instance of Watson Machine Learning. It needs to know about it so it can put its credentials in `process.env` so the call to the api works, as we did locally. To connect your frontend app with wml service, follow these steps:
+
+* From [IBM Cloud Dashboard](https://console.bluemix.net/dashboard/apps), find the Cusomter churn app under Clloud Foundry Applications section and click on it. This will open the application management console. In the **Connections** section, click **Create Connection**.
+
+![](doc/source/images/021.jpg)
+
+* A list of all your availble IBM Cloud services you have running will appear, choose the **Machine Learning** service and click **Connect**.
+
+![](doc/source/images/022.jpg)
+
+* Now in your connections, you should find the WML service appearing in the list.
+
+![](doc/source/images/023.jpg)
+
+* Click on the 3 dots on the right of the wml service card, and choose **View credentials**.
+
+![](doc/source/images/024.jpg)
+
+* These are your environment variables that were generated for your frontend app to use. These are stored in `process.env` in an object called `VCAP_SERVICES`. This is what we mimicked locally with the `dotenv` node module. As you can see, your wml credentials are stored here as well.
+
+![](doc/source/images/025.jpg)
+
+* Now, let's add a couple more environmental variable for our code to run smoothly. To add cusom environment variables, click the application **Runtime** option in the left sidebar. This is another way to access all environment variables bound to this Cloud Foundry app. Let's start creating our variables.
+
+![](doc/source/images/026.jpg)
+
+* Let's add a variable that defines the machine learning model's endpoint (generated in step 8 after deployment, change the value here to your own). We also need to add the Watson Machine Learning service instance name. After you finished adding these environment variables, click **Save** for changes to take effect.
+
+![](doc/source/images/027.jpg)
 
 # Sample output
+
+* Using Postman:
+
 ![](doc/source/images/sample_output.png)
+
+* Using the UI app:
+
+![](doc/source/images/sample_output2.jpg)
 
 # Links
 * [Demo video on Youtube](https://youtu.be/13Y_AI1s9k8)
