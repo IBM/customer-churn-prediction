@@ -9,16 +9,8 @@ RUN apt-get update \
  && apt-get clean \
  && echo 'Finished installing dependencies'
 
-# Install npm production packages 
-<<<<<<< HEAD
-<<<<<<< HEAD
+# Install npm production packages
 COPY frontend/package.json /app/
-=======
-COPY package.json /app/
->>>>>>> Adding frontend code
-=======
-COPY frontend/package.json /app/
->>>>>>> Modifying Dockerfile
 RUN cd /app; npm install --production
 
 COPY . /app

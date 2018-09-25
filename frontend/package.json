@@ -24,17 +24,9 @@
     "body-parser": "^1.18.3",
     "bulma": "^0.7.1",
     "cfenv": "^1.1.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "dotenv": "^6.0.0",
-=======
->>>>>>> Adding frontend code
-=======
-    "dotenv": "^6.0.0",
->>>>>>> Added credentials retrieval from dotenv
     "ejs": "^2.6.1",
     "express": "^4.15.3",
-    "express-prettify": "^0.1.0",
     "ibm-cloud-env": "^0",
     "json-beautify": "^1.0.1",
     "log4js": "^1.1.1",

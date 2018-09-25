@@ -1,33 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 applications:
 - buildpack: sdk-for-nodejs
   command: npm start
   domain: mybluemix.net
-  host: frontend-customerchurn
-  instances: 1
-  memory: 256MB
-  name: CustomerChurnWebapp
-  timeout: 180
-domain: mybluemix.net
-host: frontend-customerchurn
-=======
----
-=======
->>>>>>> Modifying Dockerfile
-applications:
-- buildpack: sdk-for-nodejs
-  command: npm start
-  domain: mybluemix.net
-<<<<<<< HEAD
   host: customer-churn-webapp
->>>>>>> Adding frontend code
-=======
-  host: frontend-customerchurn
   instances: 1
   memory: 256MB
   name: CustomerChurnWebapp
   timeout: 180
-domain: mybluemix.net
-host: frontend-customerchurn
->>>>>>> Modifying Dockerfile
