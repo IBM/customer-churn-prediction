@@ -41,7 +41,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 # Watch the Video
 
-[![](https://i.ytimg.com/vi/13Y_AI1s9k8/0.jpg)](https://youtu.be/13Y_AI1s9k8)
+[![](https://i.ytimg.com/vi/qchkktwMA6U/0.jpg)](https://youtu.be/qchkktwMA6U)
 
 # Steps
 
@@ -281,7 +281,7 @@ After we deployed our app to the cloud, now it has no clue about our running ins
 ![](doc/source/images/sample_output2.jpg)
 
 # Links
-* [Demo video on Youtube](https://youtu.be/13Y_AI1s9k8)
+* [Demo video on Youtube](https://youtu.be/qchkktwMA6U)
 * [Read more about CRISPDM](https://www.ibm.com/support/knowledgecenter/en/SS3RA7_15.0.0/com.ibm.spss.crispdm.help/crisp_overview.htm)
 
 # Learn more
