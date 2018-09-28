@@ -156,7 +156,7 @@ For developing the UI locally and testing it:
 For our purposes here, our `.env` file will look like the following:
 
 ```
-WML_INSTANCE_NAME=**Enter with your Watson Machine Learning service instance name** 
+WML_INSTANCE_NAME=**Enter with your Watson Machine Learning service instance name**
 USERNAME=**Enter your WML username found in credentials**
 PASSWORD=**Enter your WML password found in credentials**
 INSTANCE_ID=**Enter your WML instance_id found in credentials**
@@ -217,7 +217,7 @@ You can start a toolchain and configure it here:
 
 Or you can click on the following button to clone the repo for this frontend app and create a toolchain to start deploying the app from there.
 
-[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://git.ng.bluemix.net/Heba.Elshimy1/CustomerChurnWebapp.git)
+[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/customer-churn-prediction)
 
 Clicking on the previous button will direct you to the following page:
 
