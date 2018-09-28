@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+  <div class="hero-body">
+    <div class="container has-text-centered box-shape">
+      <h1 class="title has-text-dark">
+        Results
+      </h1>
+      <ul class="has-text-dark">
+          <li class="has-text-weight-semibold"><%= prediction %></li>
+          <li>Probability that the customer will not churn: ~<span class="has-text-weight-semibold"><%= no_churn_probability %></span></li>
+          <li>Probability that the customer will churn: ~<span class="has-text-weight-semibold"><%= churn_probability %></span></li>
+          <li>&nbsp;</li>
+          <li class="is-size-7"><span class="has-text-weight-semibold">Raw Model Output: </span><br><%= output %></li>
+      </ul>
+      <hr class="separator">
+      <div class="flex-row justify-center">
+        <div class="field">
+          <div class="control">
+            <a href="/" class="button is-link">Go back and try other values</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% include ../partials/footer %>

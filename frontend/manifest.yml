@@ -1,0 +1,11 @@
+applications:
+- buildpack: sdk-for-nodejs
+  command: npm start
+  domain: mybluemix.net
+  host: customer-churn-webapp
+  instances: 1
+  memory: 256MB
+  name: CustomerChurnWebapp
+  timeout: 180
+domain: mybluemix.net
+host: customer-churn-webapp
