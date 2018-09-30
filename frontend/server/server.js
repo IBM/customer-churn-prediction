@@ -18,23 +18,6 @@ const logger = log4js.getLogger(appName);
 const app = express();
 const server = http.createServer(app);
 
-const name = process.env.WML_INSTANCE_NAME;
-const username = process.env.USERNAME || cfenv.getAppEnv().getService(name).credentials.username;
-const password = process.env.PASSWORD || cfenv.getAppEnv().getService(name).credentials.password;
-const auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
-
-var token = 'Bearer ';
-
-fetch('https://ibm-watson-ml.mybluemix.net/v3/identity/token', {
-  credentials: 'include',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': auth
-  }
-})
-.then(response => response.json())
-.then(json => token += json.token);
-
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
@@ -75,6 +58,23 @@ app.post('/results', function(req, res) {
   const charges = req.body.charges;
   const protection = req.body.protection;
   const paperless = req.body.paperless;
+
+  const name = process.env.WML_INSTANCE_NAME;
+  const username = process.env.USERNAME || appEnv.getService(name).credentials.username;
+  const password = process.env.PASSWORD || appEnv.getService(name).credentials.password;
+  const auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
+
+  var token = 'Bearer ';
+
+  fetch('https://ibm-watson-ml.mybluemix.net/v3/identity/token', {
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': auth
+    }
+  })
+  .then(response => response.json())
+  .then(json => token += json.token);
 
   fetch(process.env.MODEL_URL, {
     method: 'POST',
