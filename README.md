@@ -195,7 +195,9 @@ At the end of this step you should get a message in your terminal notifying you 
 ![](doc/source/images/013.jpg)
 
 #### 2. Using IBM Cloud CLI:
-In your terminal, and inside the `frontend/` folder, type in the following:
+In your terminal, and inside the `frontend/` folder. In your IDE open the file `manifest.yml` and change the name of the application to something of your choice. App push may fail if that name is already taken, as this will be the route of the your application.
+
+After saving the changes in `manifest.yml`, type in the following:
 
 ```
 ibmcloud app push
