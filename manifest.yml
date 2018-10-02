@@ -1,0 +1,19 @@
+declared-services:
+  custom-churn-data-science-experience:
+    label: pm-20
+    plan: lite
+applications:
+- services:
+   - custom-churn-data-science-experience
+  path: ./frontend
+  command: npm start
+  instances: 1
+  memory: 256MB
+  name: customer-churn-webapp
+env:
+  WML_INSTANCE_NAME: placeholder
+  USERNAME: placeholder
+  PASSWORD: placeholder
+  INSTANCE_ID: placeholder
+  URL: placeholder
+  MODEL_URL: placeholder

@@ -10,7 +10,8 @@
     "start": "node server/server.js",
     "debug": "chmod +x run-debug && ./run-debug",
     "test": "nyc mocha",
-    "dev": "nodemon server/server.js"
+    "dev": "nodemon server/server.js",
+    "run-dev": "npm run dev"
   },
   "nodemonConfig": {
     "env": {
