@@ -1,5 +1,3 @@
-# Work In Progress. Please re-visit soon for the completed code pattern
-
 # Predict Customer Churn using Watson Studio and Jupyter Notebooks
 In this Code Pattern, we use IBM Watson Studio to go through the whole data science pipeline to solve a business problem and predict customer churn using a Telco customer churn dataset. Watson Studio is an interactive, collaborative, cloud-based environment where data scientists, developers, and others interested in data science can use tools (e.g., RStudio, Jupyter Notebooks, Spark, etc.) to collaborate, share, and gather insight from their data as well as build and deploy machine learning and deep learning models.
 
