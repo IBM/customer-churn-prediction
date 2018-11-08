@@ -17,8 +17,8 @@ When the reader has completed this Code Pattern, they will understand how to:
 1. Understand the business problem.
 2. Load the provided notebook into the Watson Studio platform.
 3. [Telco customer churn data set](https://community.watsonanalytics.com/wp-content/uploads/2015/03/WA_Fn-UseC_-Telco-Customer-Churn.csv) is loaded into the Jupyter Notebook.
-4. Decribe, analyze and visualize data in the notebook.
-5. Preprocess the data, build machine learning models and test them..
+4. Describe, analyze and visualize data in the notebook.
+5. Preprocess the data, build machine learning models and test them.
 6. Deploy a selected machine learning model into production.
 7. Interact and consume your model using a frontend application.
 
@@ -29,11 +29,11 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 ## Featured technologies
 
-* [Jupyter Notebooks](http://jupyter.org/): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text.
+* [Jupyter Notebooks](http://jupyter.org/): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and explanatory text.
 * [Pandas](https://pandas.pydata.org/):  An open source library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 * [Seaborn](https://seaborn.pydata.org/): A Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
 * [Scikit-Learn](http://scikit-learn.org/): Machine Learning in Python. Simple and efficient tools for data mining and data analysis.
-* [Watson Machine Learning Client](https://pypi.org/project/watson-machine-learning-client/): A library that allows to work with Watson Machine Learning service on [IBM Cloud](https://console.bluemix.net/catalog/services/machine-learning). Train, test and deploy your models as APIs for application development, share with colleagues using this python library.
+* [Watson Machine Learning Client](https://pypi.org/project/watson-machine-learning-client/): A library that allows working with Watson Machine Learning service on [IBM Cloud](https://console.bluemix.net/catalog/services/machine-learning). Train, test and deploy your models as APIs for application development, share with colleagues using this python library.
 * [NodeJS](https://nodejs.org/): A JavaScript runtime built on Chrome's V8 JavaScript engine, used for building full stack Javascript web applications.
 * [ExpressJS](https://expressjs.com/): A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
@@ -60,7 +60,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a project in Watson Studio a free tier Object Storage service will be created in your IBM Cloud account. Take note of your service names as you will need to select them in the following steps.
 
-> Note: When creating your Object Storage service, select the Free storage type in order to avoid having to pay an upgrade fee.
+> Note: When creating your Object Storage service, select the Free storage type to avoid having to pay an upgrade fee.
 
 ### 2. Create a new Project
 
@@ -81,7 +81,7 @@ Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a 
 * Download the dataset we will use in this pattern from the following link: [https://community.watsonanalytics.com/wp-content/uploads/2015/03/WA_Fn-UseC_-Telco-Customer-Churn.csv](https://community.watsonanalytics.com/wp-content/uploads/2015/03/WA_Fn-UseC_-Telco-Customer-Churn.csv)
 
 
-* Drag and drop the dataset (csv) file you just downloaded to Watson Studio's dashboard to upload it to Cloud Object Storage.
+* Drag and drop the dataset (`csv`) file you just downloaded to Watson Studio's dashboard to upload it to Cloud Object Storage.
 
 ![](doc/source/images/004.jpg)
 
@@ -95,7 +95,7 @@ Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a 
 
 ![](doc/source/images/006.jpg)
 
-* Import the notebook found in this repository inside the notebook folder by copying and pasting this url in the relevant field `https://github.com/IBM/customer-churn-prediction/blob/master/notebooks/customer-churn-prediction.ipynb`. Give a name to the notebook and select a runtime environment, then click **Create**.
+* Import the notebook found in this repository inside the notebook folder by copying and pasting this URL in the relevant field `https://github.com/IBM/customer-churn-prediction/blob/master/notebooks/customer-churn-prediction.ipynb`. Give a name to the notebook and select a runtime environment, then click **Create**.
 
 ![](doc/source/images/007.jpg)
 
@@ -108,7 +108,7 @@ To make the dataset available in the notebook, we need to refer to where it live
 
 ### 6. Follow the steps in the notebook
 
-The steps should allow you to understand the dataset, analyze and visualize it. You will then go through the preprocessing and feature engineering processes to make the data suitable for modelling. Finally, you will build some machine learning models and test them to compare their performances.
+The steps should allow you to understand the dataset, analyze and visualize it. You will then go through the preprocessing and feature engineering processes to make the data suitable for modeling. Finally, you will build some machine learning models and test them to compare their performances.
 
 ### 7. Create Watson Machine Learning Service instance
 
@@ -122,13 +122,13 @@ When you reach the part in the notebook where we start the deployment of a selec
 
 ![](doc/source/images/010.jpg)
 
-* Once the service instance is created, navigate to **Service credentials**, view credentials and make note of them.
+* Once the service instance is created, navigate to **Service credentials**, view credentials and make a note of them.
 
 > Note: If you can't see any credentials available, you can create a **New credential**.
 
 ![](doc/source/images/011.jpg)
 
-* In the notebook availble with this pattern, there is a cell with the WML credentials available, you just need to replace the code inside with your credentials.
+* In the notebook available with this pattern, there is a cell with the WML credentials available, you just need to replace the code inside with your credentials.
 
 ![](doc/source/images/012.jpg)
 
@@ -144,7 +144,7 @@ Click on the following button to clone the repo for this frontend app and create
 
 * Under `IBM Cloud API Key:` choose `Create+`, and then click on ``Deploy``.
 
-To monitor the deployment, in Toolchains click on `Delivery Pipeline`  and view the logs while the apps is being deployed.
+To monitor the deployment, in Toolchains click on `Delivery Pipeline`  and view the logs while the apps are being deployed.
 
 * Once the app has deployed, Click on `Runtime` on the menu and navigate to the `Environment variables` tab.
 
@@ -171,10 +171,10 @@ USERNAME=**Enter your WML username found in credentials**
 PASSWORD=**Enter your WML password found in credentials**
 INSTANCE_ID=**Enter your WML instance_id found in credentials**
 URL=**Enter your WML url found in credentials**
-MODEL_URL=**Change with your model url after deploying it to the cloud as in step 8**
+MODEL_URL=**Change with your model URL after deploying it to the cloud as in step 8**
 
 ```
-* copy the variable for the .env file using the variables obtained at the end of [Create Watson Machine Learning Service instance](#7-create-watson-machine-learning-service-instance). Add the `MODEL_URL` that you created in the Notebook.
+* Copy the variable for the .env file using the variables obtained at the end of [Create Watson Machine Learning Service instance](#7-create-watson-machine-learning-service-instance). Add the `MODEL_URL` that you created in the Notebook.
 
 * Run the application.
 
@@ -184,7 +184,7 @@ npm install
 npm start
 ```
 
-You can view the application in any browser by navigating to: `http://localhost:3000`. Feel free to test it out.
+You can view the application in any browser by navigating to [http://localhost:3000](http://localhost:3000). Feel free to test it out.
 
 # Sample output
 
