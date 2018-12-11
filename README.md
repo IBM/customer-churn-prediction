@@ -48,8 +48,8 @@ When the reader has completed this Code Pattern, they will understand how to:
 3. [Upload the dataset](#3-upload-the-dataset)
 4. [Import notebook to Watson Studio](#4-import-notebook-to-watson-studio)
 5. [Import dataset into the notebook](#5-import-dataset-into-the-notebook)
-6. [Follow the steps in the notebook](#6-follow-the-steps-in-the-notebook)
-7. [Create Watson Machine Learning Service instance](#7-create-watson-machine-learning-service-instance)
+6. [Create Watson Machine Learning Service instance](#6-create-watson-machine-learning-service-instance)
+7. [Follow the steps in the notebook](#7-follow-the-steps-in-the-notebook)
 8. [Either Deploy to IBM Cloud or Deploy locally](#8-either-deploy-to-ibm-cloud-or-deploy-locally)
 
     8a. [Deploy to IBM Cloud](#8a-deploy-to-ibm-cloud)
@@ -64,17 +64,19 @@ Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a 
 
 ### 2. Create a new Project
 
-* On Watson Studio's Welcome Page select **New Project**.
+> Note: By creating a project in Watson Studio a free tier `Object Storage` service will be created in your IBM Cloud account. Take note of your service names as you will need to select them in the following steps.
 
-![](doc/source/images/001.jpg)
+* On Watson Studio's Welcome Page select `New Project`.
 
-* Choose the **Complete** option.
+![](https://github.com/IBM/pattern-utils/tree/master/watson-studio/StudioStartCreateProject.png)
 
-![](doc/source/images/002.jpg)
+* Choose the `Data Science` option and click `Create Project`.
 
-* Name your project, select the Cloud Object Storage service instance and click **Create**.
+![](https://github.com/IBM/pattern-utils/blob/master/watson-studio/CreateDataScienceProject.png)
 
-![](doc/source/images/003.jpg)
+* Name your project, select the Cloud Object Storage service instance and click `Create`
+
+![](doc/source/images/CreateProject.jpg)
 
 ### 3. Upload the dataset
 
@@ -83,21 +85,19 @@ Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a 
 
 * Drag and drop the dataset (`csv`) file you just downloaded to Watson Studio's dashboard to upload it to Cloud Object Storage.
 
-![](doc/source/images/004.jpg)
-
-* Don't change the page as to not interrupt the upload process, once it's done you should find the dataset under the **Data assets** category.
-
-![](doc/source/images/005.jpg)
+![](doc/source/images/uploadData.jpg)
 
 ### 4. Import notebook to Watson Studio
 
 * Create a **New Notebook**.
 
-![](doc/source/images/006.jpg)
+![](https://github.com/IBM/pattern-utils/blob/master/watson-studio/StudioAddToProjectNotebook.png)
 
-* Import the notebook found in this repository inside the notebook folder by copying and pasting this URL in the relevant field `https://github.com/IBM/customer-churn-prediction/blob/master/notebooks/customer-churn-prediction.ipynb`. Give a name to the notebook and select a runtime environment, then click **Create**.
+* Import the notebook found in this repository inside the notebook folder by copying and pasting this URL in the relevant field `https://raw.githubusercontent.com/IBM/customer-churn-prediction/master/notebooks/customer-churn-prediction.ipynb`
 
-![](doc/source/images/007.jpg)
+* Give a name to the notebook and select a `Python 3.5` runtime environment, then click `Create`.
+
+![](https://github.com/IBM/pattern-utils/blob/master/watson-studio/notebook_with_url_py35.png)
 
 ### 5. Import dataset into the notebook
 
@@ -106,33 +106,32 @@ To make the dataset available in the notebook, we need to refer to where it live
 * Click in the cell below `2. Loading Our Dataset`
 * Then go to the Files section to the right of the notebook and click `Insert to code` for the data you have uploaded. Choose `Insert pandas DataFrame`.
 
-### 6. Follow the steps in the notebook
+### 6. Create Watson Machine Learning Service instance
 
-The steps should allow you to understand the dataset, analyze and visualize it. You will then go through the preprocessing and feature engineering processes to make the data suitable for modeling. Finally, you will build some machine learning models and test them to compare their performances.
 
-### 7. Create Watson Machine Learning Service instance
+* From [IBM Cloud Catalog](https://console.bluemix.net/catalog/), under the Watson category, select `Machine Learning` or use the Search bar to find `Machine Learning`.
 
-When you reach the part in the notebook where we start the deployment of a selected model, make sure you have a running instance of **Watson Machine Learning Service**. If you don't have one already, follow these steps to create one.
+![](doc/source/images/chooseMachineLearning.jpg)
 
-* From [IBM Cloud Catalog](https://console.bluemix.net/catalog/), under the Watson category, select **Machine Learning**.
+* Keep the setting as they are and click `Create`.
 
-![](doc/source/images/009.jpg)
+![](https://github.com/IBM/pattern-utils/blob/master/machine-learning/create-machine-learning.png)
 
-* Keep the setting as they are and click **Create**.
+* Once the service instance is created, navigate to the `Service credentials` tab on the left, view credentials and make a note of them.
 
-![](doc/source/images/010.jpg)
+> Note: If you can't see any credentials available, you can create a `New credential`.
 
-* Once the service instance is created, navigate to **Service credentials**, view credentials and make a note of them.
+![](https://github.com/IBM/pattern-utils/blob/master/machine-learning/ML-service-credentials.png)
 
-> Note: If you can't see any credentials available, you can create a **New credential**.
+* In the notebook available with this pattern, there is a cell with the WML credentials available after `14. ROC Curve and models comparisons`. You will need to replace the code inside with your credentials.
 
-![](doc/source/images/011.jpg)
-
-* In the notebook available with this pattern, there is a cell with the WML credentials available, you just need to replace the code inside with your credentials.
-
-![](doc/source/images/012.jpg)
+![](doc/source/images/insertCreds.jpg)
 
 * Keep this tab open, or copy the credentials to a file to use later if you deploy the web app.
+
+### 7. Follow the steps in the notebook
+
+The steps should allow you to understand the dataset, analyze and visualize it. You will then go through the preprocessing and feature engineering processes to make the data suitable for modeling. Finally, you will build some machine learning models and test them to compare their performances.
 
 ### 8. Either Deploy to IBM Cloud or Deploy locally
 
@@ -150,7 +149,7 @@ To monitor the deployment, in Toolchains click on `Delivery Pipeline`  and view 
 
 ![](doc/source/images/customerChurnENVvariables.png)
 
-* Update the 5 environment variables with the `WML_INSTANCE_NAME`, `USERNAME`, `PASSWORD`, and `INSTANCE_ID`, `URL`, that you saved at the end of [Create Watson Machine Learning Service instance](#7-create-watson-machine-learning-service-instance). Add the `MODEL_URL` that you created in the Notebook.
+* Update the 5 environment variables with the `WML_INSTANCE_NAME`, `USERNAME`, `PASSWORD`, `INSTANCE_ID`, and `URL`, that you saved at the end of [Create Watson Machine Learning Service instance](#7-create-watson-machine-learning-service-instance). Add the `MODEL_URL` that you created in the Notebook as the variable `scoring_endpoint`.
 The app will automatically restart and be ready for use.
 
 ### 8b. Deploy locally
