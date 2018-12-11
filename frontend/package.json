@@ -19,24 +19,21 @@
     }
   },
   "dependencies": {
-    "appmetrics-dash": "^4.0.0",
-    "appmetrics-prometheus": "^2.0.0",
-    "appmetrics-zipkin": "^1.0.4",
     "body-parser": "^1.18.3",
     "bulma": "^0.7.1",
     "cfenv": "^1.1.0",
     "dotenv": "^6.0.0",
     "ejs": "^2.6.1",
     "express": "^4.15.3",
-    "ibm-cloud-env": "^0",
+    "ibm-cloud-env": "^0.2.6",
     "json-beautify": "^1.0.1",
-    "log4js": "^1.1.1",
+    "log4js": "^3.0.6",
     "node-fetch": "^2.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1",
     "chai": "^4.0.0",
-    "mocha": "^3.4.2",
-    "nyc": "^10.3.2"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.12.1",
+    "nyc": "^13.1.0"
   }
 }

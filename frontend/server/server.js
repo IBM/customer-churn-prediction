@@ -1,6 +1,4 @@
 require('dotenv').config();
-require('appmetrics-dash').attach();
-require('appmetrics-prometheus').attach();
 
 const appName = require('./../package').name;
 const http = require('http');
@@ -38,7 +36,7 @@ fetch('https://ibm-watson-ml.mybluemix.net/v3/identity/token', {
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-// index page 
+// index page
 app.get('/', function(req, res) {
   res.render('pages/index');
 });
@@ -52,8 +50,7 @@ require('./routers/index')(app,server);
 
 const port = process.env.PORT || localConfig.port;
 server.listen(port, function(){
-  logger.info(`CustomerChurnWebapp listening on http://localhost:${port}/appmetrics-dash`);
-  
+
   logger.info(`CustomerChurnWebapp listening on http://localhost:${port}`);
 });
 
@@ -137,7 +134,7 @@ app.post('/results', function(req, res) {
           support === 'No' && payment === 'electronic-check' ? 1 : 0, // TechSupport_No_PaymentMethod_Electronic check
           contract === 'month-to-month' && paperless === 'Yes' ? 1 : 0, // Contract_Month-to-month_PaperlessBilling_Yes
           contract === 'month-to-month' && payment === 'electronic-check' ? 1 : 0, // Contract_Month-to-month_PaymentMethod_Electronic check
-        ]	
+        ]
       ]
     })
   })
