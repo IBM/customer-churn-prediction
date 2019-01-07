@@ -3,10 +3,10 @@ In this Code Pattern, we use IBM Watson Studio to go through the whole data scie
 
 When the reader has completed this Code Pattern, they will understand how to:
 
-* Use [Jupyter Notebooks](http://jupyter.org/) to load, visualize, and analyze data
-* Run Notebooks in [IBM Watson Studio](https://dataplatform.ibm.com/)
+* Use [Jupyter Notebooks](https://jupyter.org/) to load, visualize, and analyze data
+* Run Notebooks in [IBM Watson Studio](https://dataplatform.cloud.ibm.com/)
 * Load data from [IBM Cloud Object Storage](https://console.bluemix.net/catalog/services/cloud-object-storage)
-* Build, test and compare different machine learning models using [Scikit-Learn](http://scikit-learn.org/)
+* Build, test and compare different machine learning models using [Scikit-Learn](https://scikit-learn.org/)
 * Deploy a selected machine learning model to production using Watson Studio
 * Create a front-end application to interface with the client and start consuming your deployed model.
 
@@ -24,15 +24,15 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 ## Included components
 
-* [IBM Watson Studio](https://www.ibm.com/us-en/marketplace/data-science-experience): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
+* [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
 * [IBM Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/overview): Deploy and run your applications without managing servers or clusters. Cloud Foundry automatically transforms source code into containers, scales them on demand, and manages user access and capacity.
 
 ## Featured technologies
 
-* [Jupyter Notebooks](http://jupyter.org/): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and explanatory text.
+* [Jupyter Notebooks](https://jupyter.org/): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and explanatory text.
 * [Pandas](https://pandas.pydata.org/):  An open source library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 * [Seaborn](https://seaborn.pydata.org/): A Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
-* [Scikit-Learn](http://scikit-learn.org/): Machine Learning in Python. Simple and efficient tools for data mining and data analysis.
+* [Scikit-Learn](https://scikit-learn.org/): Machine Learning in Python. Simple and efficient tools for data mining and data analysis.
 * [Watson Machine Learning Client](https://pypi.org/project/watson-machine-learning-client/): A library that allows working with Watson Machine Learning service on [IBM Cloud](https://console.bluemix.net/catalog/services/machine-learning). Train, test and deploy your models as APIs for application development, share with colleagues using this python library.
 * [NodeJS](https://nodejs.org/): A JavaScript runtime built on Chrome's V8 JavaScript engine, used for building full stack Javascript web applications.
 * [ExpressJS](https://expressjs.com/): A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
@@ -58,7 +58,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 ### 1. Sign up for Watson Studio
 
-Sign up for IBM's [Watson Studio](https://dataplatform.ibm.com/). By creating a project in Watson Studio a free tier Object Storage service will be created in your IBM Cloud account. Take note of your service names as you will need to select them in the following steps.
+Sign up for IBM's [Watson Studio](https://dataplatform.cloud.ibm.com/). By creating a project in Watson Studio a free tier Object Storage service will be created in your IBM Cloud account. Take note of your service names as you will need to select them in the following steps.
 
 > Note: When creating your Object Storage service, select the Free storage type to avoid having to pay an upgrade fee.
 
@@ -139,7 +139,7 @@ The steps should allow you to understand the dataset, analyze and visualize it. 
 
 Click on the following button to clone the repo for this frontend app and create a toolchain to start deploying the app from there.
 
-[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/customer-churn-prediction)
+[![Deploy to IBM Cloud](https://console.bluemix.net/devops/setup/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/customer-churn-prediction)
 
 * Under `IBM Cloud API Key:` choose `Create+`, and then click on ``Deploy``.
 
@@ -149,7 +149,7 @@ To monitor the deployment, in Toolchains click on `Delivery Pipeline`  and view 
 
 ![](doc/source/images/customerChurnENVvariables.png)
 
-* Update the 5 environment variables with the `WML_INSTANCE_NAME`, `USERNAME`, `PASSWORD`, `INSTANCE_ID`, and `URL`, that you saved at the end of [Create Watson Machine Learning Service instance](#7-create-watson-machine-learning-service-instance). Add the `MODEL_URL` that you created in the Notebook as the variable `scoring_endpoint`.
+* Update the 5 environment variables with the `WML_INSTANCE_NAME`, `USERNAME`, `PASSWORD`, `INSTANCE_ID`, and `URL`, that you saved at the end of [Create Watson Machine Learning Service instance](#6-create-watson-machine-learning-service-instance). Add the `MODEL_URL` that you created in the Notebook as the variable `scoring_endpoint`.
 The app will automatically restart and be ready for use.
 
 ### 8b. Deploy locally
@@ -173,7 +173,7 @@ URL=**Enter your WML url found in credentials**
 MODEL_URL=**Change with your model URL after deploying it to the cloud as in step 8**
 
 ```
-* Copy the variable for the .env file using the variables obtained at the end of [Create Watson Machine Learning Service instance](#7-create-watson-machine-learning-service-instance). Add the `MODEL_URL` that you created in the Notebook.
+* Copy the variable for the .env file using the variables obtained at the end of [Create Watson Machine Learning Service instance](#6-create-watson-machine-learning-service-instance). Add the `MODEL_URL` that you created in the Notebook.
 
 * Run the application.
 
@@ -200,13 +200,13 @@ You can view the application in any browser by navigating to [http://localhost:3
 * [Read more about CRISPDM](https://www.ibm.com/support/knowledgecenter/en/SS3RA7_15.0.0/com.ibm.spss.crispdm.help/crisp_overview.htm)
 
 # Learn more
-* **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/code/technologies/artificial-intelligence/).
-* **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/code/technologies/data-science/)
+* **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/technologies/artificial-intelligence/).
+* **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/technologies/data-science/)
 * **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
 * **With Watson**: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? [Join the With Watson program](https://www.ibm.com/watson/with-watson/) to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
-* **IBM Watson Studio**: Master the art of data science with IBM's [Watson Studio](https://datascience.ibm.com/)
+* **IBM Watson Studio**: Master the art of data science with IBM's [Watson Studio](https://www.ibm.com/cloud/watson-studio)
 
 # License
-This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-[Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
