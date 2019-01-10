@@ -5,7 +5,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 * Use [Jupyter Notebooks](https://jupyter.org/) to load, visualize, and analyze data
 * Run Notebooks in [IBM Watson Studio](https://dataplatform.cloud.ibm.com/)
-* Load data from [IBM Cloud Object Storage](https://console.bluemix.net/catalog/services/cloud-object-storage)
+* Load data from [IBM Cloud Object Storage](https://cloud.ibm.com/catalog/services/cloud-object-storage)
 * Build, test and compare different machine learning models using [Scikit-Learn](https://scikit-learn.org/)
 * Deploy a selected machine learning model to production using Watson Studio
 * Create a front-end application to interface with the client and start consuming your deployed model.
@@ -25,7 +25,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 ## Included components
 
 * [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
-* [IBM Cloud Foundry](https://console.bluemix.net/dashboard/cloudfoundry/overview): Deploy and run your applications without managing servers or clusters. Cloud Foundry automatically transforms source code into containers, scales them on demand, and manages user access and capacity.
+* [IBM Cloud Foundry](https://cloud.ibm.com/dashboard/cloudfoundry/overview): Deploy and run your applications without managing servers or clusters. Cloud Foundry automatically transforms source code into containers, scales them on demand, and manages user access and capacity.
 
 ## Featured technologies
 
@@ -33,7 +33,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 * [Pandas](https://pandas.pydata.org/):  An open source library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 * [Seaborn](https://seaborn.pydata.org/): A Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
 * [Scikit-Learn](https://scikit-learn.org/): Machine Learning in Python. Simple and efficient tools for data mining and data analysis.
-* [Watson Machine Learning Client](https://pypi.org/project/watson-machine-learning-client/): A library that allows working with Watson Machine Learning service on [IBM Cloud](https://console.bluemix.net/catalog/services/machine-learning). Train, test and deploy your models as APIs for application development, share with colleagues using this python library.
+* [Watson Machine Learning Client](https://pypi.org/project/watson-machine-learning-client/): A library that allows working with Watson Machine Learning service on [IBM Cloud](https://cloud.ibm.com/catalog/services/machine-learning). Train, test and deploy your models as APIs for application development, share with colleagues using this python library.
 * [NodeJS](https://nodejs.org/): A JavaScript runtime built on Chrome's V8 JavaScript engine, used for building full stack Javascript web applications.
 * [ExpressJS](https://expressjs.com/): A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
@@ -109,7 +109,7 @@ To make the dataset available in the notebook, we need to refer to where it live
 ### 6. Create Watson Machine Learning Service instance
 
 
-* From [IBM Cloud Catalog](https://console.bluemix.net/catalog/), under the Watson category, select `Machine Learning` or use the Search bar to find `Machine Learning`.
+* From [IBM Cloud Catalog](https://cloud.ibm.com/catalog/), under the Watson category, select `Machine Learning` or use the Search bar to find `Machine Learning`.
 
 ![](doc/source/images/chooseMachineLearning.jpg)
 
@@ -139,7 +139,7 @@ The steps should allow you to understand the dataset, analyze and visualize it. 
 
 Click on the following button to clone the repo for this frontend app and create a toolchain to start deploying the app from there.
 
-[![Deploy to IBM Cloud](https://console.bluemix.net/devops/setup/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/customer-churn-prediction)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/IBM/customer-churn-prediction)
 
 * Under `IBM Cloud API Key:` choose `Create+`, and then click on ``Deploy``.
 
