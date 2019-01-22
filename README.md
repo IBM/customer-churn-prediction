@@ -68,7 +68,7 @@ Sign up for IBM's [Watson Studio](https://dataplatform.cloud.ibm.com/). By creat
 
 * On Watson Studio's Welcome Page select `New Project`.
 
-![](https://github.com/IBM/pattern-utils/tree/master/watson-studio/StudioStartCreateProject.png)
+![](https://github.com/IBM/pattern-utils/blob/master/watson-studio/StudioStartCreateProject.png)
 
 * Choose the `Data Science` option and click `Create Project`.
 
